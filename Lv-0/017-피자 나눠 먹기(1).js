@@ -9,10 +9,11 @@
 // n = 1, result = 1
 // n = 15, result = 3
 
-// n / 7 ==> 0 result = 1
-// n / 1 ==>
+// n = 1~7, result = 1
+// n = 8 ~ 14, result = 2
+// n = 15~21, result = 3
 
 // #내 답안
-// function solution(n, slice) {
-
+// function solution(n) {
+//    if(n % 7 == 0)
 // }
