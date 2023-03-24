@@ -9,11 +9,35 @@
 // #입출력 예
 // slice = 7, n = 10, result = 2
 // slice = 4, n = 12, result = 3
+// slice = 5, n = 6, result = 2
+
+// n / slice == 1 + 나머지 3 ==> 2
+// n / slice = result
 
 // #내 답안
-// function solution(slice, n) {
-//     let answer = 1;
-//     if(n / slice < 0) {
-//         answer += 1;
-//     }
-// }
+function solution(slice, n) {
+    let answer = 1;
+    if(n/slice == 0) {
+        answer = Math.floor(n/slice);
+    }
+    else(n/slice != 0) {
+        answer = Math.floor(n/slice) + 1;
+    }
+    return answer;
+  }
+
+// #다시 푼 답안
+function solution(slice, n) {
+    let answer = 0;
+    if(n%slice == 0) {
+        answer = Math.floor(n/slice);
+    }
+    else {
+        answer = Math.floor(n/slice) + 1;
+    }
+    return answer;
+}
+
+// // #틀린 이유
+// 파이썬을 하다가 자바스크립트의 몫, 나머지 연산자 사용하는게 명확하지 않음
+// if문에서 % 나머지 연산자를 이용해야했지만 나누기로 해서 오류가 있었음
