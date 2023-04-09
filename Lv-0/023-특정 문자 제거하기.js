@@ -16,11 +16,31 @@
 // result = "Cdbe"
 
 // # 내 오답
+// function solution(my_string, letter) {
+//   for (let i = 0; i < my_string.length; i++) {
+//     if (my_string[i] == letter) {
+//       my_string.replaceAll(letter, "");
+//     }
+//   }
+//   return my_string;
+// }
+
+// # 다시 푼 답안
 function solution(my_string, letter) {
+  let answer = "";
   for (let i = 0; i < my_string.length; i++) {
+    answer += my_string[i];
     if (my_string[i] == letter) {
-      my_string.replaceAll("letter", "");
+      answer = answer.replaceAll(letter, "");
     }
   }
-  return my_string;
+  return answer;
 }
+
+// # 답안
+function solution(my_string, letter) {
+  return my_string.replaceAll(letter, "");
+}
+
+// # 느낀점
+// 굳이 for문을 이용하지 않고 replace()를 사용하여 바로 return 하는 것이 더 깔끔하고 간결한 코드이기 때문에 불필요한 코드는 지양해야한다.
