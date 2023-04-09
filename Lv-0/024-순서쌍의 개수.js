@@ -7,3 +7,15 @@
 // #입출력 예
 // n =20, result = 6
 // n = 100, result = 9
+
+function solution(n) {
+  let answer = 0;
+  for (let i = 1; i <= n; i++) {
+    if (n % i == 0) {
+      answer += 1;
+    }
+  }
+  return answer;
+}
+
+// 약수의 개수 구하는 것과 같은 원리
