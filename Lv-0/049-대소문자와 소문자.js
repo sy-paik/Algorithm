@@ -21,3 +21,19 @@ function solution(my_string) {
     }
     return result;
 }
+
+/* 다른 사람의 풀이 */
+function solution(my_string) {
+    return my_string.split('').map(n => n === n.toLowerCase() ? n.toUpperCase() : n.toLowerCase()).join('');
+}
+
+/* 파이썬 코드 */
+/* def solution(my_string):
+    answer = '';
+    for i in range(len(my_string)):
+        if(my_string[i] == my_string[i].upper()):
+            answer += my_string[i].lower()
+        else:
+            answer += my_string[i].upper()
+    return answer;
+*/
