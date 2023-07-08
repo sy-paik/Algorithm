@@ -3,6 +3,11 @@
 시켜먹은 치킨의 수 chicken이 매개변수로 주어질 때 받을 수 있는 최대 서비스 치킨의 수를 return하도록 solution 함수를 완성해주세요. */
 
 function solution(chicken) {
-    var answer = 0;
-    return answer;
+    let result = 0;
+    
+    while(chicken >= 10){
+    	result += Math.floor(chicken / 10);
+        chicken = chicken % 10 + Math.floor(chicken / 10);
+    }
+    return result;
 }
