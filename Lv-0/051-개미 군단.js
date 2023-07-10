@@ -13,9 +13,21 @@
 
 /* 내 답안 */
 function solution(hp) {
-    const first = 5
-    const second = 3
-    const third = 1
-    const result = (hp / first) + (hp % first / second ) + (hp % first % second / third);
-    return result;   
+    const first = 5;
+    const second = 3;
+    const third = 1;
+    const result =
+        hp / first + (hp % first) / second + ((hp % first) % second) / third;
+    return result;
 }
+
+/* 다른 사람의 풀이 */
+function solution(hp) {
+    return Math.floor(hp / 5) + Math.floor((hp % 5) / 3) + ((hp % 5) % 3);
+}
+
+/* 파이썬 코드 */
+/*
+def solution(hp):
+    return hp // 5 + (hp % 5 // 3) + ((hp % 5) % 3)
+*/
