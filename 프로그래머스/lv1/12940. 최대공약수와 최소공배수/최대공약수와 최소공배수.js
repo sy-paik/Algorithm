@@ -1,9 +1,16 @@
 function solution(n, m) {
-    var answer = [];
-    const greatest = (a, b) => {  
-        if (b === 0) return a   
-        return greatest(b, a % b)  
-    }
-    const least = (a,b) => (a*b) / greatest(a,b)
-    return [greatest(n,m), least(n,m)]
+    let answer = [];
+
+    const greatest = (a, b) => {
+        while (b !== 0) {
+            const remainder = a % b;
+            a = b;
+            b = remainder;
+        }
+        return a;
+    };
+
+    const least = (a, b) => (a * b) / greatest(a, b);
+
+    return [greatest(n, m), least(n, m)];
 }
