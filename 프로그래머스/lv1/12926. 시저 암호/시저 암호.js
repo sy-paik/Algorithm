@@ -1,5 +1,27 @@
-
 function solution(s, n) {
-    var chars = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXY                          "
-    return s.split('').map(e => chars[chars.indexOf(e)+n]).join('');
+  // 알파벳 패턴 배열
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  // 시저 암호화 함수
+  const caesarCipher = (char, pattern) => {
+    const index = pattern.indexOf(char);
+    if (index !== -1) {
+      const newIndex = (index + n) % pattern.length;
+      return pattern[newIndex];
+    }
+    return char;
+  };
+
+  let result = "";
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (/[a-z]/.test(char)) {
+      result += caesarCipher(char, alphabet);
+    } else {
+      result += caesarCipher(char, upperAlphabet);
+    }
+  }
+  return result;
 }
