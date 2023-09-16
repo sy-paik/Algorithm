@@ -1,5 +1,3 @@
-
-
 function solution(strings, n) {
     return strings.sort((a, b) => {
         const charA = a[n];
@@ -11,6 +9,7 @@ function solution(strings, n) {
             return 1;
         } else {
             return a < b ? -1 : 1;
+            // 문자열 전체 비교
         }
     });
 }
