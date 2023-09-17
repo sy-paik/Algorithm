@@ -1,27 +1,25 @@
 const fs = require('fs');
 
-const input = fs
-  .readFileSync("/dev/stdin", "utf8")
-  .toString()
-  .trim();
+function solution(N) {
+    let constructor = 1;
 
-const number = parseInt(input, 10);
+    while (constructor <= N) {
+        const eachNum = constructor.toString().split('');
+        const sum = eachNum.reduce((acc, eachNum) => acc + parseInt(eachNum), 0);
 
-let result = 1;
+        if (constructor + sum === N) {
+            return constructor;
+        }
 
-for (let i = 1; i < number; i++) {
-  result = i;
+        constructor++;
+    }
 
-  const stringValue = i.toString();
-
-  for (let j = 0; j < stringValue.length; j++) {
-    result += parseInt(stringValue[j], 10);
-  }
-
-  if (result === number) {
-    console.log(i);
-    return;
-  }
+    return 0;
 }
 
-console.log(0);
+const input = fs.readFileSync("/dev/stdin", "utf8").toString().trim();
+const number = parseInt(input, 10);
+
+const minConstructor = solution(number);
+
+console.log(minConstructor);
