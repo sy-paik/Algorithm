@@ -4,7 +4,7 @@ function solution(food) {
     if (food[i] === 1) {
       continue;
     }
-    answer += String(i).repeat(Math.floor(food[i] / 2));
+    answer += i.toString().repeat(Math.floor(food[i] / 2));
   }
   return answer + "0" + [...answer].reverse().join("");
 }
