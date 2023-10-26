@@ -1,22 +1,15 @@
 function solution(n) {
-    if (n < 2) return 0; 
-
-    let isPrime = new Array(n + 1).fill(true); 
-
-    for (let i = 2; i * i <= n; i++) {
-        if (isPrime[i]) {
-            for (let j = i * i; j <= n; j += i) {
-                isPrime[j] = false; 
+    let answer = 0;
+    let arr = new Array(n + 1).fill(true);
+    arr[0] = false;
+    arr[1] = false;
+    
+    for(let i = 2; i * i <= n; i++) {
+        if(arr[i]) {
+            for(let j = i * i; j <= n; j += i) {
+                arr[j] = false;
             }
         }
     }
-
-    let count = 0;
-    for (let i = 2; i <= n; i++) {
-        if (isPrime[i]) {
-            count++;
-        }
-    }
-
-    return count;
+    return arr.filter(el => el).length
 }
